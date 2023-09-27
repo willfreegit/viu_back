@@ -4,6 +4,7 @@ import com.viu.moduloautenticacion.Usuario.modelo.Usuario;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -15,6 +16,10 @@ public class Rol {
     private long rol_codigo;
     private String rol_descripcion;
 
-    @ManyToMany(mappedBy = "roles")
-    Set<Usuario> usuarios;
+    @ManyToMany(fetch = FetchType.LAZY,
+            cascade = {
+                    CascadeType.PERSIST,
+                    CascadeType.MERGE
+            },mappedBy = "roles")
+    Set<Usuario> usuarios = new HashSet<>();
 }
