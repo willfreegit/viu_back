@@ -1,5 +1,6 @@
 package com.viu.moduloautenticacion.Usuario.modelo;
 
+import com.viu.moduloautenticacion.Parqueadero.modelo.Parqueadero;
 import com.viu.moduloautenticacion.Rol.modelo.Rol;
 import jakarta.persistence.*;
 import lombok.Data;
@@ -29,9 +30,7 @@ public class Usuario {
     )
     Set<Rol> roles = new HashSet<>();
 
-    public void addRol(Rol rol){
-        this.roles.add(rol);
-        rol.getUsuarios().add(this);
-    }
-
+    @ManyToOne
+    @JoinColumn(name = "par_codigo", nullable = false)
+    private Parqueadero parqueadero;
 }
