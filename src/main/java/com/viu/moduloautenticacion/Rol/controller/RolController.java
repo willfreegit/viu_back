@@ -1,7 +1,7 @@
-package com.viu.moduloautenticacion.Rol.controlador;
+package com.viu.moduloautenticacion.Rol.controller;
 
-import com.viu.moduloautenticacion.Rol.modelo.Rol;
-import com.viu.moduloautenticacion.Rol.servicio.RolService;
+import com.viu.moduloautenticacion.Rol.model.Rol;
+import com.viu.moduloautenticacion.Rol.service.RolService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -19,8 +19,8 @@ public class RolController {
         return ResponseEntity.ok(rolService.saveRol(rol));
     }
 
-    @GetMapping("/getRolById/{id}")
-    public ResponseEntity<Rol> getRolByid(@PathVariable Long id){
+    @GetMapping("/getById/{id}")
+    public ResponseEntity<Rol> getById(@PathVariable Long id){
         Optional<Rol> response = rolService.findById(id);
         if(response.isPresent()){
             return ResponseEntity.ok(response.get());

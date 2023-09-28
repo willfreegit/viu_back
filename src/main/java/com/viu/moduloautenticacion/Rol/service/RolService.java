@@ -1,6 +1,6 @@
-package com.viu.moduloautenticacion.Rol.servicio;
+package com.viu.moduloautenticacion.Rol.service;
 
-import com.viu.moduloautenticacion.Rol.modelo.Rol;
+import com.viu.moduloautenticacion.Rol.model.Rol;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;

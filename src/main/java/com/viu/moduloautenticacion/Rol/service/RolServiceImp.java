@@ -1,7 +1,7 @@
-package com.viu.moduloautenticacion.Rol.servicio;
+package com.viu.moduloautenticacion.Rol.service;
 
-import com.viu.moduloautenticacion.Rol.modelo.Rol;
-import com.viu.moduloautenticacion.Rol.repositorio.RolRepository;
+import com.viu.moduloautenticacion.Rol.model.Rol;
+import com.viu.moduloautenticacion.Rol.repository.RolRepository;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
