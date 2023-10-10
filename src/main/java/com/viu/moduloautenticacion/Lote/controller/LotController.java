@@ -4,12 +4,13 @@ import com.viu.moduloautenticacion.Lote.model.Lot;
 import com.viu.moduloautenticacion.Lote.service.LotService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @RestController
+@CrossOrigin
 @RequestMapping("/api/v1/lot")
 @AllArgsConstructor
 public class LotController {
@@ -19,5 +20,10 @@ public class LotController {
     @PostMapping("/save")
     public ResponseEntity<Lot> save(@RequestBody Lot lot){
         return ResponseEntity.ok(lotService.save(lot));
+    }
+
+    @GetMapping("/getByParkingId/{id}")
+    public ResponseEntity<List<Lot>> getByParkingId(@PathVariable long id){
+        return ResponseEntity.ok(lotService.findByParkingId(id));
     }
 }

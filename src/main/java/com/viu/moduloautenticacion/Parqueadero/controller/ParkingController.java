@@ -20,7 +20,7 @@ public class ParkingController {
     }
 
     @GetMapping("/getById/{id}")
-    private ResponseEntity<Parking> getById(Long id){
+    private ResponseEntity<Parking> getById(@PathVariable Long id){
         Optional<Parking> response = parkingService.findById(id);
         if(response.isPresent()){
             return ResponseEntity.ok(response.get());
