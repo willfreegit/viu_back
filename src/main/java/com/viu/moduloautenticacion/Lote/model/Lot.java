@@ -20,8 +20,10 @@ public class Lot {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long lot_code;
     private String lot_id;
-    private String lot_state;
     private String lot_type;
+    private String lot_state;
+    private String lot_style;
+    private String lot_clicked;
     private boolean deleted = Boolean.FALSE;
 
     @ManyToOne
