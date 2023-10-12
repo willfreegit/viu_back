@@ -19,14 +19,14 @@ public class Contract {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long con_id;
+    private Long con_code;
     private String con_state;
     private String con_register;
     private Date con_timeIn;
     private Date con_timeOut;
     private int con_timeTotal;
     private BigDecimal con_price;
-    private BigDecimal con_pay;
+    private BigDecimal con_total;
     private boolean deleted = Boolean.FALSE;
 
     @ManyToOne
