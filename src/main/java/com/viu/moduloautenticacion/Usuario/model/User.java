@@ -16,6 +16,8 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long usr_code;
     private String usr_name;
+    private String usr_last_name;
+    private String usr_email;
     private String usr_password;
 
     @ManyToMany(fetch = FetchType.LAZY,
