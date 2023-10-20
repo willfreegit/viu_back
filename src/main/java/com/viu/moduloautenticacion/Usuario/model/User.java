@@ -1,38 +1,26 @@
 package com.viu.moduloautenticacion.Usuario.model;
 
 import com.viu.moduloautenticacion.Parqueadero.model.Parking;
-import com.viu.moduloautenticacion.Rol.model.Rol;
 import jakarta.persistence.*;
 import lombok.Data;
 
-import java.util.HashSet;
-import java.util.Set;
-
 @Entity
 @Data
+@Table(name = "user", uniqueConstraints = {
+        @UniqueConstraint(columnNames = "userName"),
+        @UniqueConstraint(columnNames = "email")
+})
 public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long usr_code;
-    private String usr_name;
-    private String usr_last_name;
-    private String usr_email;
-    private String usr_password;
-
-    @ManyToMany(fetch = FetchType.LAZY,
-            cascade = {
-                    CascadeType.PERSIST,
-                    CascadeType.MERGE
-            })
-    @JoinTable(
-            name = "belongs",
-            joinColumns = @JoinColumn(name = "usr_code"),
-            inverseJoinColumns = @JoinColumn(name = "rol_code")
-    )
-    Set<Rol> roles = new HashSet<>();
+    private long id_user;
+    private String userName;
+    private String email;
+    private String password;
+    private String role;
 
     @ManyToOne
-    @JoinColumn(name = "par_code", nullable = false)
+    @JoinColumn(name = "id_parking")
     private Parking parking;
 }

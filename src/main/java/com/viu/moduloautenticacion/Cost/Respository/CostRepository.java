@@ -8,6 +8,6 @@ import java.util.List;
 
 public interface CostRepository extends JpaRepository<Cost, Long> {
 
-    @Query("select cost from Cost cost where cost.parking.par_code=?1")
+    @Query("select cost from Cost cost where cost.parking.id_parking=?1")
     List<Cost> findAllByParking(Long id);
 }

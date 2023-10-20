@@ -16,12 +16,12 @@ import java.math.BigDecimal;
 public class Cost {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long tar_code;
-    private String tar_type;
-    private BigDecimal tar_cost;
+    private long id_cost;
+    private String type;
+    private BigDecimal cost;
 
     @JsonIgnore
     @ManyToOne
-    @JoinColumn(name = "par_code", nullable = false)
+    @JoinColumn(name = "id_parking", nullable = false)
     private Parking parking;
 }

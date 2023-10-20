@@ -10,4 +10,8 @@ public interface UserService {
     User saveUsuario(User user);
 
     Optional<User> findById(Long id);
+
+    Optional<User> getByUserName(String userName);
+
+    boolean existsByEmail(String email);
 }

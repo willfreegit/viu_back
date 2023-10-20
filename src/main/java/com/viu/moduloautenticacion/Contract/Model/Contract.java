@@ -19,18 +19,18 @@ public class Contract {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long con_code;
-    private String con_state;
-    private String con_register;
-    private Date con_timeIn;
-    private Date con_timeOut;
-    private int con_timeTotal;
-    private BigDecimal con_price;
-    private BigDecimal con_total;
+    private Long id_contract;
+    private String state;
+    private String register;
+    private Date time_in;
+    private Date time_out;
+    private int time_total;
+    private BigDecimal price;
+    private BigDecimal total;
     private boolean deleted = Boolean.FALSE;
 
     @ManyToOne
-    @JoinColumn(name = "lot_code", nullable = false)
+    @JoinColumn(name = "id_lot", nullable = false)
     private Lot lot;
 
 }

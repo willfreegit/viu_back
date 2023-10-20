@@ -16,12 +16,12 @@ import java.util.Set;
 public class Parking {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long par_code;
-    private String par_name;
-    private String par_address;
-    private String par_longitude;
-    private String par_latitude;
-    private String par_state;
+    private long id_parking;
+    private String name;
+    private String address;
+    private String longitude;
+    private String latitude;
+    private String state;
 
     @OneToMany
     private Set<User> users;
@@ -30,52 +30,51 @@ public class Parking {
     @OneToMany(cascade = CascadeType.ALL)
     private Set<Cost> costs;
 
-    public long getPar_code() {
-        return par_code;
+    public long getId_parking() {
+        return id_parking;
     }
 
-    public void setPar_code(long par_code) {
-        this.par_code = par_code;
+    public void setId_parking(long id_parking) {
+        this.id_parking = id_parking;
+    }
+    public String getName() {
+        return name;
     }
 
-    public String getPar_name() {
-        return par_name;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public void setPar_name(String par_name) {
-        this.par_name = par_name;
+    public String getAddress() {
+        return address;
     }
 
-    public String getPar_address() {
-        return par_address;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
-    public void setPar_address(String par_address) {
-        this.par_address = par_address;
+    public String getLongitude() {
+        return longitude;
     }
 
-    public String getPar_longitude() {
-        return par_longitude;
+    public void setLongitude(String longitude) {
+        this.longitude = longitude;
     }
 
-    public void setPar_longitude(String par_longitude) {
-        this.par_longitude = par_longitude;
+    public String getLatitude() {
+        return latitude;
     }
 
-    public String getPar_latitude() {
-        return par_latitude;
+    public void setLatitude(String latitude) {
+        this.latitude = latitude;
     }
 
-    public void setPar_latitude(String par_latitude) {
-        this.par_latitude = par_latitude;
+    public String getState() {
+        return state;
     }
 
-    public String getPar_state() {
-        return par_state;
-    }
-
-    public void setPar_state(String par_state) {
-        this.par_state = par_state;
+    public void setState(String state) {
+        this.state = state;
     }
 
     public Set<User> getUsers() {

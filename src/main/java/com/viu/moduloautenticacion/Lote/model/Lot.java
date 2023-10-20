@@ -18,16 +18,16 @@ public class Lot {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long lot_code;
-    private String lot_id;
-    private String lot_type;
-    private String lot_state;
-    private String lot_style;
-    private String lot_clicked;
+    private long id_lot;
+    private String code;
+    private String type;
+    private String state;
+    private String style;
+    private String clicked;
     private boolean deleted = Boolean.FALSE;
 
     @ManyToOne
-    @JoinColumn(name = "par_code", nullable = false)
+    @JoinColumn(name = "id_parking", nullable = false)
     private Parking parking;
 
     @OneToMany(cascade = CascadeType.ALL)
