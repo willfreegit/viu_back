@@ -26,6 +26,12 @@ public class Lot {
     private String clicked;
     private boolean deleted = Boolean.FALSE;
 
+    @Transient
+    private String contract_id;
+    @Transient
+    private String contract_register;
+
+
     @ManyToOne
     @JoinColumn(name = "id_parking", nullable = false)
     private Parking parking;

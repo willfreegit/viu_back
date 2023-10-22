@@ -31,7 +31,7 @@ public class LotController {
         return ResponseEntity.ok(lotService.update(id, lot));
     }
 
-    @PutMapping("/update/{id}")
+    @PutMapping("/delete/{id}")
     private ResponseEntity<Lot> delete(@PathVariable Long id){
         return ResponseEntity.ok(lotService.delete(id));
     }
