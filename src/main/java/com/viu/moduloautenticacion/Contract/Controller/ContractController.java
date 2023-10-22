@@ -20,9 +20,14 @@ public class ContractController {
     private ResponseEntity<Contract> findById(@PathVariable Long id){
         Optional<Contract> optContract = contractService.findById(id);
         if(optContract.isPresent()){
-            ResponseEntity.ok(optContract.get());
+            return ResponseEntity.ok(optContract.get());
         }
         return ResponseEntity.ok(new Contract());
+    }
+
+    @PutMapping("/update/{id}")
+    private ResponseEntity<Contract> update(@PathVariable Long id, @RequestBody Contract contract){
+        return ResponseEntity.ok(contractService.update(id, contract));
     }
 
     @PostMapping("/save")

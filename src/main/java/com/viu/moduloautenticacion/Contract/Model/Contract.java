@@ -9,6 +9,8 @@ import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 import java.sql.Date;
+import java.sql.Time;
+import java.sql.Timestamp;
 
 
 @Entity
@@ -22,8 +24,8 @@ public class Contract {
     private Long id_contract;
     private String state;
     private String register;
-    private Date time_in;
-    private Date time_out;
+    private Timestamp time_in;
+    private Timestamp time_out;
     private int time_total;
     private BigDecimal price;
     private BigDecimal total;

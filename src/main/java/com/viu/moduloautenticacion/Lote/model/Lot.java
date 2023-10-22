@@ -24,7 +24,7 @@ public class Lot {
     private String state;
     private String style;
     private String clicked;
-    private boolean deleted = Boolean.FALSE;
+    private String deleted = "0";
 
     @Transient
     private String contract_id;

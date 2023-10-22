@@ -16,4 +16,6 @@ public interface ContractService {
     Optional<Contract> findById(Long id);
 
     List<Contract> findByLotId(Long id);
+
+    Contract update(Long id, Contract contract);
 }

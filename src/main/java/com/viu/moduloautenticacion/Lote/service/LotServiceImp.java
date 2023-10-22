@@ -60,7 +60,8 @@ public class LotServiceImp implements LotService {
         Optional<Lot> parkingOptional = lotRepository.findById(id);
         if(parkingOptional.isPresent()){
             Lot old = parkingOptional.get();
-            old.setDeleted(true);
+            old.setDeleted("1");
+            System.out.println("si elimina...." + id);
             return lotRepository.save(old);
         }
         return null;

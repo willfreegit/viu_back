@@ -27,4 +27,15 @@ public class ContractServiceImp implements ContractService {
     public List<Contract> findByLotId(Long id) {
         return contractRespository.findByLotId(id);
     }
+
+    @Override
+    public Contract update(Long id, Contract contract) {
+        Optional<Contract> old = contractRespository.findById(id);
+        if(old.isPresent()){
+            Contract update = old.get();
+            update.setState(contract.getState());
+            return contractRespository.save(update);
+        }
+        return new Contract();
+    }
 }
