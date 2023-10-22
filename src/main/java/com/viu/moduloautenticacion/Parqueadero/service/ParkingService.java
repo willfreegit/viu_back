@@ -9,5 +9,7 @@ import java.util.Optional;
 public interface ParkingService {
     Parking save(Parking parking);
 
+    Parking update(Long id, Parking parking);
+
     Optional<Parking> findById(Long id);
 }

@@ -19,6 +19,21 @@ public class ParkingServiceImp implements ParkingService {
     }
 
     @Override
+    public Parking update(Long id, Parking parking) {
+        Optional<Parking> parkingOptional = parkingRepository.findById(id);
+        if(parkingOptional.isPresent()){
+            Parking old = parkingOptional.get();
+            old.setAddress(parking.getAddress());
+            old.setLatitude(parking.getLatitude());
+            old.setLongitude(parking.getLongitude());
+            old.setName(parking.getName());
+            old.setAttention(parking.getAttention());
+            return parkingRepository.save(old);
+        }
+        return null;
+    }
+
+    @Override
     public Optional<Parking> findById(Long id) {
         return parkingRepository.findById(id);
     }

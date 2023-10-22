@@ -21,6 +21,7 @@ public class Parking {
     private String address;
     private String longitude;
     private String latitude;
+    private String attention;
     private String state;
 
     @OneToMany
@@ -67,6 +68,14 @@ public class Parking {
 
     public void setLatitude(String latitude) {
         this.latitude = latitude;
+    }
+
+    public String getAttention() {
+        return attention;
+    }
+
+    public void setAttention(String attention) {
+        this.attention = attention;
     }
 
     public String getState() {

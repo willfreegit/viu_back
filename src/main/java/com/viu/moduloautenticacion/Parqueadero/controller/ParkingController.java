@@ -4,6 +4,7 @@ import com.viu.moduloautenticacion.Parqueadero.model.Parking;
 import com.viu.moduloautenticacion.Parqueadero.service.ParkingService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.method.P;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
@@ -17,6 +18,11 @@ public class ParkingController {
     @PostMapping("/save")
     private ResponseEntity<Parking> save(@RequestBody Parking parking){
         return ResponseEntity.ok(parkingService.save(parking));
+    }
+
+    @PutMapping("/update/{id}")
+    private ResponseEntity<Parking> update(@PathVariable Long id, @RequestBody Parking parking){
+        return ResponseEntity.ok(parkingService.update(id, parking));
     }
 
     @GetMapping("/getById/{id}")
